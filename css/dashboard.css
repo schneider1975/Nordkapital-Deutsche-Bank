@@ -1,0 +1,269 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#07111f;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.background{
+  position:fixed;
+  inset:0;
+
+  background:
+  radial-gradient(circle at top right,#16345c 0%,transparent 35%),
+  radial-gradient(circle at bottom left,#0b2038 0%,transparent 35%),
+  linear-gradient(135deg,#07111f,#091523);
+
+  z-index:-1;
+}
+
+.topbar{
+  padding:30px 25px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.welcome{
+  color:#94a6bc;
+  font-size:14px;
+}
+
+.topbar h1{
+  margin-top:8px;
+  font-size:28px;
+}
+
+.profile-circle{
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  background:#2b7fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
+}
+
+.dashboard{
+  padding:0 20px 40px;
+}
+
+.balance-card{
+  position:relative;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  padding:35px;
+
+  overflow:hidden;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 25px 50px rgba(0,0,0,0.4);
+}
+
+.card-glow{
+  position:absolute;
+  width:220px;
+  height:220px;
+
+  background:#2b7fff;
+
+  filter:blur(100px);
+
+  opacity:0.15;
+
+  top:-100px;
+  right:-100px;
+}
+
+.account-type{
+  color:#9fb2ca;
+  font-size:14px;
+}
+
+.balance-card h2{
+  font-size:48px;
+  margin-top:20px;
+  font-weight:800;
+}
+
+.blocked-status{
+  display:inline-block;
+
+  margin-top:20px;
+
+  background:#ff6b35;
+
+  color:white;
+
+  padding:10px 18px;
+
+  border-radius:30px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+}
+
+.blocked-text{
+  margin-top:25px;
+
+  line-height:1.7;
+
+  color:#b0bfd0;
+}
+
+.unlock-btn{
+  width:100%;
+
+  margin-top:30px;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:linear-gradient(135deg,#2b7fff,#005eff);
+
+  color:white;
+
+  font-weight:700;
+
+  font-size:16px;
+
+  cursor:pointer;
+}
+
+.transactions{
+  margin-top:30px;
+}
+
+.section-title{
+  margin-bottom:20px;
+}
+
+.section-title h3{
+  font-size:24px;
+}
+
+.transaction{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px;
+
+  margin-bottom:15px;
+
+  background:rgba(255,255,255,0.04);
+
+  border-radius:20px;
+}
+
+.transaction h4{
+  margin-bottom:6px;
+}
+
+.transaction span{
+  color:#95a5bb;
+  font-size:13px;
+}
+
+.transaction.negative strong{
+  color:#ff6b6b;
+}
+
+.transaction.positive strong{
+  color:#00d26a;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.7);
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+}
+
+.modal-content{
+  width:100%;
+  max-width:400px;
+
+  background:#101c2d;
+
+  border-radius:25px;
+
+  padding:30px;
+}
+
+.modal-content h3{
+  font-size:28px;
+}
+
+.modal-content p{
+  margin-top:20px;
+  line-height:1.7;
+  color:#b5c3d4;
+}
+
+.notary-box{
+  margin-top:25px;
+
+  padding:20px;
+
+  background:#17263a;
+
+  border-radius:18px;
+}
+
+.notary-box span{
+  display:block;
+  margin-top:8px;
+  color:#9bb0c7;
+}
+
+.modal-content button{
+  width:100%;
+
+  margin-top:25px;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:#2b7fff;
+
+  color:white;
+
+  font-weight:700;
+}
