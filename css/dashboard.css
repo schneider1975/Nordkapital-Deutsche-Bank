@@ -267,3 +267,86 @@ body{
 
   font-weight:700;
 }
+.show-modal{
+  display:flex !important;
+  animation:fadeIn 0.4s ease;
+}
+
+.notification{
+  position:fixed;
+
+  top:30px;
+  right:-400px;
+
+  width:320px;
+
+  background:rgba(18,29,46,0.95);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:22px;
+
+  padding:20px;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
+  transition:0.5s ease;
+
+  z-index:9999;
+}
+
+.show-notification{
+  right:20px;
+}
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+.transaction{
+  transition:0.4s ease;
+}
+
+.transaction:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,0.07);
+}
+
+.unlock-btn{
+  transition:0.4s ease;
+}
+
+.unlock-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(43,127,255,0.35);
+}
+
+.balance-card{
+  animation:fadeCard 1s ease;
+}
+
+@keyframes fadeCard{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
