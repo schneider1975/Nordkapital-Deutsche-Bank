@@ -1,41 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // =========================
-  // BALANCE COUNTER
+  // ULTRA SMOOTH BALANCE
   // =========================
 
-  const balance = document.getElementById("balance");
-
-  let amount = 0;
+  const balance =
+    document.getElementById("balance");
 
   const target = 78000;
 
-  const counter = setInterval(() => {
+  let current = 0;
 
-    amount += 1200;
+  const duration = 2200;
 
-    if(amount >= target){
+  const increment =
+    target / (duration / 16);
 
-      amount = target;
+  function animateBalance(){
 
-      clearInterval(counter);
+    current += increment;
+
+    if(current >= target){
+
+      current = target;
 
     }
 
     balance.innerHTML =
-      amount.toLocaleString("de-DE") + ",00 €";
+      new Intl.NumberFormat(
+        "de-DE",
+        {
+          style: "currency",
+          currency: "EUR",
+          minimumFractionDigits: 2
+        }
+      ).format(current);
 
-  }, 25);
+    if(current < target){
+
+      requestAnimationFrame(
+        animateBalance
+      );
+
+    }
+
+  }
+
+  animateBalance();
 
   // =========================
   // MODAL SYSTEM
   // =========================
 
-  const modal = document.getElementById("modal");
+  const modal =
+    document.getElementById("modal");
 
-  const openBtn = document.getElementById("openModal");
+  const openBtn =
+    document.getElementById("openModal");
 
-  const closeBtn = document.getElementById("closeModal");
+  const closeBtn =
+    document.getElementById("closeModal");
 
   openBtn.addEventListener("click", () => {
 
@@ -53,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(e.target === modal){
 
-      modal.classList.remove("show-modal");
+      modal.classList.remove(
+        "show-modal"
+      );
 
     }
 
@@ -64,21 +90,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
 
   const transactions =
-    document.querySelectorAll(".transaction");
+    document.querySelectorAll(
+      ".transaction"
+    );
 
   transactions.forEach((item, index) => {
 
     item.style.opacity = "0";
 
-    item.style.transform = "translateY(30px)";
+    item.style.transform =
+      "translateY(30px)";
 
     setTimeout(() => {
 
-      item.style.transition = "0.6s ease";
+      item.style.transition =
+        "0.6s ease";
 
       item.style.opacity = "1";
 
-      item.style.transform = "translateY(0)";
+      item.style.transform =
+        "translateY(0)";
 
     }, 300 + (index * 180));
 
@@ -89,28 +120,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
 
   const unlockBtn =
-    document.querySelector(".unlock-btn");
+    document.querySelector(
+      ".unlock-btn"
+    );
 
-  unlockBtn.addEventListener("click", () => {
-
-    unlockBtn.innerHTML =
-      "Anfrage wird verarbeitet...";
-
-    unlockBtn.style.opacity = "0.8";
-
-    setTimeout(() => {
+  unlockBtn.addEventListener(
+    "click",
+    () => {
 
       unlockBtn.innerHTML =
-        "Freigabe beantragen";
+        "Anfrage wird verarbeitet...";
 
-      unlockBtn.style.opacity = "1";
+      unlockBtn.style.opacity =
+        "0.8";
 
-    }, 2000);
+      setTimeout(() => {
 
-  });
+        unlockBtn.innerHTML =
+          "Freigabe beantragen";
+
+        unlockBtn.style.opacity =
+          "1";
+
+      }, 2000);
+
+    }
+  );
 
   // =========================
-  // NOTIFICATION SYSTEM
+  // SECURITY NOTIFICATION
   // =========================
 
   setTimeout(() => {
@@ -118,18 +156,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const notification =
       document.createElement("div");
 
-    notification.className = "notification";
+    notification.className =
+      "notification";
 
     notification.innerHTML = `
       <strong>Sicherheitssystem</strong><br>
       Letzte sichere Anmeldung erkannt.
     `;
 
-    document.body.appendChild(notification);
+    document.body.appendChild(
+      notification
+    );
 
     setTimeout(() => {
 
-      notification.classList.add("show-notification");
+      notification.classList.add(
+        "show-notification"
+      );
 
     }, 200);
 
