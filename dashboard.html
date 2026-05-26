@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NordKapital Dashboard</title>
+
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <header class="topbar">
+
+    <div>
+      <span class="welcome">
+        Willkommen zurück
+      </span>
+
+      <h1>
+        SCHNEIDER FRIEDA
+      </h1>
+    </div>
+
+    <div class="profile-circle">
+      SF
+    </div>
+
+  </header>
+
+  <main class="dashboard">
+
+    <section class="balance-card">
+
+      <div class="card-glow"></div>
+
+      <span class="account-type">
+        Nachlasskonto
+      </span>
+
+      <h2 id="balance">
+        78.000,00 €
+      </h2>
+
+      <div class="blocked-status">
+        GESPERRT
+      </div>
+
+      <p class="blocked-text">
+
+        Dieses Konto ist aufgrund eines Erbfalls gesperrt.
+        Die Freigabe erfolgt durch Notar Zink Alfred.
+
+      </p>
+
+      <button class="unlock-btn" id="openModal">
+        Freigabe beantragen
+      </button>
+
+    </section>
+
+    <section class="transactions">
+
+      <div class="section-title">
+
+        <h3>Transaktionsverlauf</h3>
+
+      </div>
+
+      <div class="transaction negative">
+        <div>
+          <h4>Klinikum Frankfurt</h4>
+          <span>12 März 2025</span>
+        </div>
+
+        <strong>-4.850,00 €</strong>
+      </div>
+
+      <div class="transaction negative">
+        <div>
+          <h4>Apotheke MedPlus</h4>
+          <span>02 Februar 2025</span>
+        </div>
+
+        <strong>-340,00 €</strong>
+      </div>
+
+      <div class="transaction negative">
+        <div>
+          <h4>Rechnung Krankenhaus</h4>
+          <span>18 Januar 2025</span>
+        </div>
+
+        <strong>-8.200,00 €</strong>
+      </div>
+
+      <div class="transaction positive">
+        <div>
+          <h4>Zinsertrag</h4>
+          <span>05 Januar 2025</span>
+        </div>
+
+        <strong>+1.200,00 €</strong>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div class="modal" id="modal">
+
+    <div class="modal-content">
+
+      <h3>Freigabeprozess</h3>
+
+      <p>
+
+        Zur Freigabe des Nachlasskontos kontaktieren Sie bitte den zuständigen Notar:
+
+      </p>
+
+      <div class="notary-box">
+
+        <strong>ZINK ALFRED</strong>
+
+        <span>Nachlassnotar Frankfurt am Main</span>
+
+      </div>
+
+      <button id="closeModal">
+        Schließen
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
